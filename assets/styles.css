@@ -685,9 +685,9 @@ a {
 
 .scene-card img {
   width: 100%;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: 58% 24%;
+  object-position: center;
 }
 
 .scene-card figcaption {
@@ -1525,7 +1525,7 @@ a {
 
   .scene-card img {
     aspect-ratio: 4 / 3;
-    object-position: 58% 24%;
+    object-position: center;
   }
 
   .friends-heading {
