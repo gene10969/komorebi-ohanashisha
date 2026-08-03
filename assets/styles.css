@@ -594,11 +594,6 @@ a {
   letter-spacing: 0.05em;
 }
 
-.status-live {
-  background: #dceadf;
-  color: #2d6542;
-}
-
 .status-preorder {
   background: #f2e3ae;
   color: #6d5515;
@@ -617,6 +612,15 @@ a {
   color: var(--ink-soft);
   font-size: 14px;
   line-height: 1.9;
+}
+
+.book-release {
+  display: block;
+  margin-top: 16px;
+  color: #6d5515;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .card-link {
@@ -719,10 +723,7 @@ a {
 }
 
 .about-card {
-  display: grid;
-  grid-template-columns: 230px 1fr;
-  align-items: center;
-  gap: 64px;
+  max-width: 920px;
   padding: 64px;
   border: 1px solid rgba(63, 104, 81, 0.18);
   border-radius: 34px;
@@ -730,29 +731,15 @@ a {
   box-shadow: 0 22px 65px rgba(63, 104, 81, 0.08);
 }
 
-.about-mark {
-  display: grid;
-  aspect-ratio: 1;
-  place-items: center;
-  border: 1px solid rgba(63, 104, 81, 0.2);
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fff8d6, #e2dca8 35%, #7da176 100%);
-  color: var(--forest);
-  font-family: var(--font-rounded);
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  box-shadow: inset 0 0 0 14px rgba(255, 255, 255, 0.28);
+.about-copy {
+  max-width: 44em;
+  margin: 0 auto;
 }
 
 .about-card p:last-child {
   max-width: 42em;
   margin-bottom: 0;
   color: var(--ink-soft);
-}
-
-.about-card > div:last-child {
-  max-width: 44em;
 }
 
 .site-footer {
@@ -1265,13 +1252,7 @@ a {
   }
 
   .about-card {
-    grid-template-columns: 1fr;
-    gap: 28px;
     padding: 28px;
-  }
-
-  .about-mark {
-    width: 130px;
   }
 
   .footer-grid,
