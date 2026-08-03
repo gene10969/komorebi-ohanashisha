@@ -1,4 +1,4 @@
-// GA4を有効にするときは、空欄を「G-XXXXXXXXXX」形式の測定IDへ差し替えてください。
+// GA4測定IDを変更するときは、下記の「G-XXXXXXXXXX」形式の値を差し替えてください。
 window.KOMOREBI_ANALYTICS = {
   measurementId: "G-EPRJS120DQ"
 };

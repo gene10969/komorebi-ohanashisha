@@ -20,11 +20,15 @@ window.KOMOREBI_ANALYTICS = {
 };
 ```
 
-設定後はページ閲覧に加え、第1巻のAmazonボタンが押されたときに `amazon_click` イベントを送信します。イベントには `book_id`、`book_title`、`link_url` が含まれます。測定IDが空欄の間はGA4のスクリプトを読み込まず、計測も行いません。
+設定後はページ閲覧に加え、第1〜3巻のAmazonボタンが押されたときに `amazon_click` イベントを送信します。イベントには `book_id`、`book_title`、`link_url` が含まれます。測定IDが空欄の間はGA4のスクリプトを読み込まず、計測も行いません。
 
-## 第2巻・第3巻の販売URLを追加する
+## Amazon商品ページ
 
-各巻の商品ページ公開後、該当ページの「近日公開」表示を、第1巻と同じ `data-amazon-link` 属性付きのリンクへ変更します。Amazon URLは短い `https://www.amazon.co.jp/dp/ASIN` 形式を使用します。
+- 第1巻：<https://www.amazon.co.jp/dp/B0HCF7L3FD>
+- 第2巻：<https://www.amazon.co.jp/dp/B0HCKVYRCL>
+- 第3巻：<https://www.amazon.co.jp/dp/B0HCKT7JBR>
+
+すべて短い `https://www.amazon.co.jp/dp/ASIN` 形式で設定し、クリック計測の対象にしています。
 
 ## ページ構成
 
