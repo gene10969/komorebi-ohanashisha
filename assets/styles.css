@@ -1426,7 +1426,7 @@ a {
 
   .promise h2,
   .section-heading h2 {
-    font-size: clamp(29px, 8vw, 31px);
+    font-size: clamp(26px, 7.4vw, 29px);
     letter-spacing: 0.02em;
     line-height: 1.52;
   }
