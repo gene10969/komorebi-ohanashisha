@@ -678,7 +678,7 @@ a {
   width: 100%;
   aspect-ratio: 5 / 4;
   object-fit: cover;
-  object-position: 58% 47%;
+  object-position: 58% 24%;
 }
 
 .scene-card figcaption {
@@ -689,6 +689,18 @@ a {
 
 .fuu-copy > p:not(.section-kicker) {
   color: rgba(255, 255, 255, 0.72);
+}
+
+.fuu-copy > p.fuu-secret {
+  margin-top: 22px;
+  color: var(--gold-pale);
+  font-family: var(--font-rounded);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.fuu-secret span {
+  display: block;
 }
 
 .fuu-copy {
@@ -1465,8 +1477,8 @@ a {
   }
 
   .scene-card img {
-    aspect-ratio: 1 / 1;
-    object-position: 58% 44%;
+    aspect-ratio: 4 / 3;
+    object-position: 58% 24%;
   }
 
   .friends-heading {
