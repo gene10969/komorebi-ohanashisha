@@ -4,8 +4,33 @@
   var settings = window.KOMOREBI_ANALYTICS || {};
   var measurementId = settings.measurementId || "";
   var isValidId = /^G-[A-Z0-9]{6,}$/.test(measurementId);
+  var exclusionKey = "komorebi_ga_exclude";
+  var searchParams = new URLSearchParams(window.location.search);
+  var excludeRequested = searchParams.get("ga_exclude") === "1";
+  var includeRequested = searchParams.get("ga_include") === "1";
+  var isExcluded = false;
 
-  if (isValidId) {
+  try {
+    if (includeRequested) {
+      window.localStorage.removeItem(exclusionKey);
+    } else if (excludeRequested) {
+      window.localStorage.setItem(exclusionKey, "1");
+    }
+
+    isExcluded = window.localStorage.getItem(exclusionKey) === "1";
+  } catch (error) {
+    isExcluded = excludeRequested && !includeRequested;
+  }
+
+  if (includeRequested) {
+    isExcluded = false;
+  } else if (excludeRequested) {
+    isExcluded = true;
+  }
+
+  var analyticsEnabled = isValidId && !isExcluded;
+
+  if (analyticsEnabled) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () {
       window.dataLayer.push(arguments);
@@ -21,7 +46,7 @@
 
   document.addEventListener("click", function (event) {
     var link = event.target.closest("[data-amazon-link]");
-    if (!link || !isValidId || typeof window.gtag !== "function") return;
+    if (!link || !analyticsEnabled || typeof window.gtag !== "function") return;
 
     window.gtag("event", "amazon_click", {
       book_id: link.dataset.bookId || "unknown",
