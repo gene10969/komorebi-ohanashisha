@@ -477,6 +477,15 @@ a {
   font-size: clamp(30px, 3.2vw, 44px);
 }
 
+.promise h2 span,
+.section-heading h2 span {
+  display: inline-block;
+}
+
+.promise h2 span + span {
+  margin-left: 0.18em;
+}
+
 .promise-copy > p {
   margin: 0 0 20px;
   color: var(--ink-soft);
@@ -1173,6 +1182,19 @@ a {
   text-underline-offset: 3px;
 }
 
+@media (min-width: 1041px) {
+  .section-heading,
+  .friends-heading {
+    max-width: none;
+  }
+
+  .section-heading > p:last-child,
+  .friends-heading > p:last-child {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 1040px) {
   .hero-grid {
     grid-template-columns: 1fr 0.9fr;
@@ -1400,6 +1422,31 @@ a {
 
   .promise-grid {
     gap: 32px;
+  }
+
+  .promise h2,
+  .section-heading h2 {
+    font-size: clamp(29px, 8vw, 31px);
+    letter-spacing: 0.02em;
+    line-height: 1.52;
+  }
+
+  .promise h2 span,
+  .section-heading h2 span,
+  .mobile-lines span,
+  .responsive-copy span {
+    display: block;
+  }
+
+  .promise h2 span + span {
+    margin-left: 0;
+  }
+
+  .promise-copy > p,
+  .section-heading > p:last-child,
+  .friends-heading > p:last-child {
+    font-size: 15px;
+    line-height: 2;
   }
 
   .feature-list li {
