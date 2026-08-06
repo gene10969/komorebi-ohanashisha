@@ -45,15 +45,27 @@
   }
 
   document.addEventListener("click", function (event) {
-    var link = event.target.closest("[data-amazon-link]");
-    if (!link || !analyticsEnabled || typeof window.gtag !== "function") return;
+    if (!analyticsEnabled || typeof window.gtag !== "function") return;
 
-    window.gtag("event", "amazon_click", {
-      book_id: link.dataset.bookId || "unknown",
-      book_title: link.dataset.bookTitle || "unknown",
-      link_url: link.href,
-      transport_type: "beacon"
-    });
+    var amazonLink = event.target.closest("[data-amazon-link]");
+    if (amazonLink) {
+      window.gtag("event", "amazon_click", {
+        book_id: amazonLink.dataset.bookId || "unknown",
+        book_title: amazonLink.dataset.bookTitle || "unknown",
+        link_source: amazonLink.dataset.linkSource || "site",
+        link_url: amazonLink.href,
+        transport_type: "beacon"
+      });
+    }
+
+    var readAloudLink = event.target.closest("[data-readaloud-link]");
+    if (readAloudLink) {
+      window.gtag("event", "read_aloud_open", {
+        book_id: readAloudLink.dataset.bookId || "book1",
+        link_source: readAloudLink.dataset.linkSource || "site",
+        link_url: readAloudLink.href
+      });
+    }
   });
 
   var revealItems = document.querySelectorAll(".reveal");
