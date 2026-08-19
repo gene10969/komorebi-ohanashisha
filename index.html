@@ -66,11 +66,32 @@
       border-color: #F6D77A;
     }
 
-    /* Hero内・第2巻「発売中」ラベルだけ色変更 */
-    .cover-two .cover-label-preorder {
+    /* 発売ステータスの色を統一 */
+    /* Hero内：第1巻・第2巻「発売中」 */
+    .cover-main .cover-label,
+    .cover-two .cover-label {
       background: #5C4A21;
       color: #FFE6A0;
       border-color: #B99743;
+    }
+
+    /* Hero内：第3巻「予約受付中」 */
+    .cover-three .cover-label {
+      background: #E8D79B;
+      color: #5A4617;
+      border-color: #D5BE72;
+    }
+
+    /* STORIES一覧：第1巻・第2巻「発売中」 */
+    .book-meta .status:not(.status-preorder) {
+      background: #E8D79B;
+      color: #5A4617;
+    }
+
+    /* STORIES一覧：第3巻「予約受付中」 */
+    .book-meta .status-preorder {
+      background: #E8D79B;
+      color: #5A4617;
     }
   </style>
 
@@ -115,7 +136,7 @@
           </a>
           <a class="cover cover-back cover-two" href="./books/ienai-gomenne/" aria-label="第2巻 いえないごめんねの紹介を見る">
             <img src="./assets/images/book2-cover.jpg" alt="モモンガのフウ 第2巻『いえないごめんね』表紙" width="1600" height="2560">
-            <span class="cover-label cover-label-preorder">第2巻 発売中</span>
+            <span class="cover-label">第2巻 発売中</span>
           </a>
           <a class="cover cover-back cover-three" href="./books/hajimete-no-moriyochien/" aria-label="第3巻 はじめての もりようちえんの紹介を見る">
             <img src="./assets/images/book3-cover.jpg" alt="モモンガのフウ 第3巻『はじめての もりようちえん』表紙" width="1600" height="2560">
@@ -173,7 +194,7 @@
               <img src="./assets/images/book2-cover.jpg" alt="『いえないごめんね』の表紙" width="1600" height="2560" loading="lazy">
             </a>
             <div class="book-card-body">
-              <div class="book-meta"><span>第2巻</span><span class="status status-preorder">発売中</span></div>
+              <div class="book-meta"><span>第2巻</span><span class="status">発売中</span></div>
               <h3><a href="./books/ienai-gomenne/">いえないごめんね</a></h3>
               <p>大切なおもちゃをこわしてしまったフウ。「ごめんね」を伝える勇気と仲直りの物語。</p>
               <time class="book-release" datetime="2026-08-15">8月15日発売</time>
